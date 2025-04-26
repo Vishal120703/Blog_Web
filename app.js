@@ -5,12 +5,15 @@ const {main} = require("./config/db")
 const authRouter = require("./routes/auth")
 const blogRouter = require("./routes/blog")
 const adminRouter = require("./routes/admin")
+const cookieParser = require('cookie-parser');
 const path = require("path")
 main();
 app.use(express.static(path.join(__dirname,"public")))
 app.set("view engine","ejs")
 app.set('views', path.join(__dirname, 'views'));
-const bodyParser = require('body-parser')
+
+app.use(cookieParser());
+// const bodyParser = require('body-parser')
 app.use(express.urlencoded({extended:true}));
 
 app.get("/",(req,res)=>{

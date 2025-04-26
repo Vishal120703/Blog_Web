@@ -1,5 +1,6 @@
 const User = require("../models/authSchema/signupSchema")
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
 exports.getUser = (req,res)=>{
     // res.render("/user/signUp")
@@ -33,7 +34,10 @@ exports.postlogin = async(req,res)=>{
         }
         const isMatch = await bcrypt.compare(password, user.password); // plain password vs hashed
         if (isMatch) {
-            res.redirect("/");
+            const payLoad = user.email;
+            const token = jwt.sign(payLoad,"vishal@120703");
+            res.cookie("token",token,{ maxAge: 60 * 1000 });
+            res.redirect("/user/login");
         } else {
             console.log("Incorrect password");
             res.redirect("/user/login");
