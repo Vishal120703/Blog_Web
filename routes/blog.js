@@ -1,8 +1,8 @@
 const express = require("express")
 const router = express.Router()
 
-router.get("/",(req,res)=>{
-    res.send("i am hero")
+router.get("/createBlog",(req,res)=>{
+    res.render("blog/createBlog.ejs")
 })
 
 module.exports= router;
