@@ -17,7 +17,7 @@ app.get("/",(req,res)=>{
     res.send("my name is vishal")
 })
 
-app.use('/User',authRouter)
+app.use("/User",authRouter)
 app.use("/Blog",blogRouter)
 app.use("/Admin",adminRouter)
 
