@@ -11,8 +11,10 @@ const blogSchema = new mongoose.Schema({
     required: true
   },
   image: {
-    type: String, // store image filename or image URL
-    default: ''
+    type: String,
+  },
+  user:{
+    type:String
   },
   author: {
     type: String,

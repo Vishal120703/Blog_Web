@@ -1,0 +1,10 @@
+<% blogs.forEach(blog => { %>
+  <div>
+    <h2><%= blog.title %></h2>
+    <p><%= blog.content %></p>
+    <p><%= blog.image %></p>
+    <img src="<%= blog.image %>" alt="Blog Image" width="200">
+    <p>Author: <%= blog.author %></p>
+    <small>Posted on: <%= blog.createdAt.toDateString() %></small>
+  </div>
+<% }) %>
