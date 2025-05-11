@@ -1,4 +1,6 @@
 const Blog = require("../models/blogs/AllBlogs");
+const multer = require('multer');
+
 exports.getBlog = (req,res)=>{
     res.render("blog/createBlog")
 }
