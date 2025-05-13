@@ -1,5 +1,6 @@
 const Blog = require("../models/blogs/AllBlogs");
 
+
 exports.getBlog = (req,res)=>{
     res.render("blog/createBlog")
 }
